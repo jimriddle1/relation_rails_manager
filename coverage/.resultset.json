@@ -244,6 +244,7 @@
           null,
           1,
           1,
+          1,
           null
         ]
       },
@@ -252,21 +253,8 @@
           1,
           null
         ]
-      },
-      "/Users/jamesriddle/turing/2module/projects/relation_rails_manager/app/models/trainer.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/jamesriddle/turing/2module/projects/relation_rails_manager/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
       }
     },
-    "timestamp": 1652278080
+    "timestamp": 1652278718
   }
 }

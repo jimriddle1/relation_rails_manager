@@ -3,6 +3,9 @@ class TrainersController < ApplicationController
     @trainers = Trainer.all
   end
 
+  def show
+  end
+
   # def new
   # end
   #
