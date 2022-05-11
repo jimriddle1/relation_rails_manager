@@ -4,6 +4,8 @@ class TrainersController < ApplicationController
   end
 
   def show
+    # binding.pry
+    @trainer = Trainer.find(params[:id])
   end
 
   # def new

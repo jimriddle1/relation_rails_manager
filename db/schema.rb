@@ -10,28 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_10_222427) do
+ActiveRecord::Schema.define(version: 2022_05_11_210546) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "pokemons", force: :cascade do |t|
-    t.bigint "trainers_id"
-    t.boolean "fainted"
+    t.string "name"
     t.integer "level"
+    t.boolean "fainted"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
-    t.index ["trainers_id"], name: "index_pokemons_on_trainers_id"
+    t.bigint "trainer_id"
+    t.index ["trainer_id"], name: "index_pokemons_on_trainer_id"
   end
 
   create_table "trainers", force: :cascade do |t|
     t.string "name"
     t.integer "age"
+    t.boolean "all_8_badges"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "all_8_badges"
   end
 
-  add_foreign_key "pokemons", "trainers", column: "trainers_id"
+  add_foreign_key "pokemons", "trainers"
 end

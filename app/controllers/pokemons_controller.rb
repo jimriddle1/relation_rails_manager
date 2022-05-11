@@ -5,6 +5,6 @@ class PokemonsController < ApplicationController
 
   def show
     # binding.pry
-    @pokemon = Pokemon.find()
+    @pokemon = Pokemon.find(params[:id])
   end
 end
