@@ -244,6 +244,7 @@
           null,
           1,
           1,
+          1,
           null
         ]
       },
@@ -253,8 +254,63 @@
           null
         ]
       },
-      "/Users/jamesriddle/turing/2module/projects/relation_rails_manager/app/models/trainer.rb": {
+      "/Users/jamesriddle/turing/2module/projects/relation_rails_manager/spec/features/trainers/show_spec.rb": {
         "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/jamesriddle/turing/2module/projects/relation_rails_manager/spec/models/pokemon_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          null,
+          1,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/jamesriddle/turing/2module/projects/relation_rails_manager/app/models/pokemon.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           1,
           null
         ]
@@ -265,8 +321,99 @@
           1,
           null
         ]
+      },
+      "/Users/jamesriddle/turing/2module/projects/relation_rails_manager/spec/models/trainer_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          null,
+          1,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/jamesriddle/turing/2module/projects/relation_rails_manager/app/models/trainer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/jamesriddle/turing/2module/projects/relation_rails_manager/app/controllers/trainers_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/jamesriddle/turing/2module/projects/relation_rails_manager/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1652278080
+    "timestamp": 1652307082
   }
 }

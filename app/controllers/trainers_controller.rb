@@ -3,6 +3,11 @@ class TrainersController < ApplicationController
     @trainers = Trainer.all
   end
 
+  def show
+    # binding.pry
+    @trainer = Trainer.find(params[:id])
+  end
+
   # def new
   # end
   #
