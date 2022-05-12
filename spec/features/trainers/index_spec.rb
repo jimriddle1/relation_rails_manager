@@ -27,4 +27,13 @@ RSpec.describe 'the trainers index page' do
 
     expect(trainer.name).to appear_before(trainer_2.name)
   end
+
+  it 'has the child link on this page' do
+    # As a visitor
+    # When I visit any page on the site
+    # Then I see a link at the top of the page that takes me to the Child Index
+    trainer = Trainer.create!(name: "Ash", age: 18, all_8_badges: false)
+    visit "/trainers/"
+    expect(page).to have_link('Pokemon Index')
+  end
 end
