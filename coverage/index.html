@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-05-12T15:14:14-05:00">2022-05-12T15:14:14-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-05-12T15:20:01-05:00">2022-05-12T15:20:01-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>136</b> relevant lines,
-    <span class="green"><b>136</b> lines covered</span> and
+    <b>142</b> relevant lines,
+    <span class="green"><b>142</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -110,7 +110,7 @@
             <td class="cell--number">5</td>
             <td class="cell--number">5</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">2.00</td>
+            <td class="cell--number">2.20</td>
             
           </tr>
         
@@ -326,7 +326,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#3446a641c8b4cff1ccf55c1e2d7baf1b83413397" class="src_link" title="spec/features/trainers/index_spec.rb">spec/features/trainers/index_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">25</td>
+            <td class="cell--number">30</td>
             <td class="cell--number">13</td>
             <td class="cell--number">13</td>
             <td class="cell--number">0</td>
@@ -348,9 +348,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#08c20e6ddea163aa39406e3aa5a78d6689b3f8dd" class="src_link" title="spec/features/trainers/show_spec.rb">spec/features/trainers/show_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">28</td>
-            <td class="cell--number">8</td>
-            <td class="cell--number">8</td>
+            <td class="cell--number">31</td>
+            <td class="cell--number">14</td>
+            <td class="cell--number">14</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -856,8 +856,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="10">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="2" data-linenumber="10">
+            <span class="hits">2</span>
             
 
             
@@ -4787,35 +4787,35 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="19">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="19">
+            
             
 
             
 
-            <code class="ruby">    trainer = Trainer.create!(name: &quot;Ash&quot;, age: 18, all_8_badges: false)</code>
+            <code class="ruby">    # As a visitor</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="20">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="20">
+            
             
 
             
 
-            <code class="ruby">    trainer_2 = Trainer.create!(name: &quot;Brock&quot;, age: 21, all_8_badges: false)</code>
+            <code class="ruby">    # When I visit the parent index,</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="21">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="21">
+            
             
 
             
 
-            <code class="ruby">    visit &quot;/trainers&quot;</code>
+            <code class="ruby">    # I see that records are ordered by most recently created first</code>
           </li>
         </div>
       
@@ -4826,12 +4826,67 @@
 
             
 
+            <code class="ruby">    # And next to each of the records I see when it was created</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="23">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="23">
+          <li class="covered" data-hits="1" data-linenumber="24">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    trainer = Trainer.create!(name: &quot;Ash&quot;, age: 18, all_8_badges: false)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="25">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    trainer_2 = Trainer.create!(name: &quot;Brock&quot;, age: 21, all_8_badges: false)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="26">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    visit &quot;/trainers&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="27">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="28">
             <span class="hits">1</span>
             
 
@@ -4842,7 +4897,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="24">
+          <li class="never" data-hits="" data-linenumber="29">
             
             
 
@@ -4853,7 +4908,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="25">
+          <li class="never" data-hits="" data-linenumber="30">
             
             
 
@@ -5100,8 +5155,8 @@
     
 
     <div class="t-line-summary">
-      <b>8</b> relevant lines.
-      <span class="green"><b>8</b> lines covered</span> and
+      <b>14</b> relevant lines.
+      <span class="green"><b>14</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -5311,57 +5366,57 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="19">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="19">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  # it &#39;displays the name of the artist for the song&#39; do</code>
+            
+
+            <code class="ruby">  it &#39;gives me the count of pokemons of a specific trainer&#39; do</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="20">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="20">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  #</code>
+            
+
+            <code class="ruby">    trainer = Trainer.create!(name: &quot;Ash&quot;, age: 18, all_8_badges: false)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="21">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="21">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  #   pokemon = trainer.pokemons.create!(name: &quot;Squirtle&quot;, level: 12, fainted: false)</code>
+            
+
+            <code class="ruby">    pokemon = trainer.pokemons.create!(name: &quot;Squirtle&quot;, pokedex_num: 7, fainted: false)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="22">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="22">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  #   binding.pry</code>
+            
+
+            <code class="ruby">    pokemon_2 = trainer.pokemons.create!(name: &quot;Charmander&quot;, pokedex_num: 4, fainted: false)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="23">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="23">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  #   # pokemon_2 = trainers.pokemons.create!(name: &quot;Charmander&quot;, level: 6, fainted: false)</code>
+            
+
+            <code class="ruby">    visit &quot;/trainers/#{trainer.id}&quot;</code>
           </li>
         </div>
       
@@ -5372,18 +5427,18 @@
 
             
 
-            <code class="ruby">  #   visit &quot;/trainers/#{trainer.id}&quot;</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="25">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="25">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  #   expect(page).to have_content(pokemon.name)</code>
+            
+
+            <code class="ruby">    expect(page).to have_content(trainer.pokemons.count)</code>
           </li>
         </div>
       
@@ -5394,7 +5449,7 @@
 
             
 
-            <code class="ruby">  #   expect(page).to_not have_content(pokemon_2.title)</code>
+            <code class="ruby">    #either work</code>
           </li>
         </div>
       
@@ -5405,12 +5460,45 @@
 
             
 
-            <code class="ruby">  # end</code>
+            <code class="ruby">    # expect(page).to have_content(2)</code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="28">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="29">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="30">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="31">
             
             
 

@@ -16,13 +16,16 @@ RSpec.describe 'the trainers show page' do
     # expect(page).to have_content(trainer_2.name)
   end
 
-  # it 'displays the name of the artist for the song' do
-  #
-  #   pokemon = trainer.pokemons.create!(name: "Squirtle", level: 12, fainted: false)
-  #   binding.pry
-  #   # pokemon_2 = trainers.pokemons.create!(name: "Charmander", level: 6, fainted: false)
-  #   visit "/trainers/#{trainer.id}"
-  #   expect(page).to have_content(pokemon.name)
-  #   expect(page).to_not have_content(pokemon_2.title)
-  # end
+  it 'gives me the count of pokemons of a specific trainer' do
+    trainer = Trainer.create!(name: "Ash", age: 18, all_8_badges: false)
+    pokemon = trainer.pokemons.create!(name: "Squirtle", pokedex_num: 7, fainted: false)
+    pokemon_2 = trainer.pokemons.create!(name: "Charmander", pokedex_num: 4, fainted: false)
+    visit "/trainers/#{trainer.id}"
+
+    expect(page).to have_content(trainer.pokemons.count)
+    #either work
+    # expect(page).to have_content(2)
+  end
+
+
 end
