@@ -19,4 +19,12 @@ RSpec.describe 'the pokemons index page' do
     expect(page).to have_content(pokemon_2.fainted)
   end
 
+  it 'has the child link on this page' do
+    # As a visitor
+    # When I visit any page on the site
+    # Then I see a link at the top of the page that takes me to the Child Index
+    visit "/pokemons/"
+    expect(page).to have_link('Pokemon Index')
+  end
+
 end
