@@ -1,5 +1,6 @@
 <h1>All Trainers</h1>
 
-<% @trainers.each do |trainer| %>
+<% @trainers.map do |trainer| %>
   <h3><a href="/trainers/<%= trainer.id %>"><%= trainer.name %></a></h3>
+  <p>Created at <%= trainer.created_at %><p>
 <% end %>

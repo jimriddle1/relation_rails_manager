@@ -5,4 +5,8 @@ class Trainer < ApplicationRecord
   validates :all_8_badges, exlcusion: nil
   validates :age, presence: true
 
+  def trainers_in_order
+    # binding.pry
+  end
+
 end

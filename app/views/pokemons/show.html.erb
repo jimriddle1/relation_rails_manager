@@ -1,4 +1,6 @@
 <h1><%= @pokemon.name %></h1>
 <p>Name: <%= @pokemon.name %>
-<p>Level: <%= @pokemon.level %>
-<p>Fainted?: <%= @pokemon.fainted %>
+<p>Pokedex Num: <%= @pokemon.pokedex_num %>
+<p>Fainted?: <%= @pokemon.fainted %> </p>
+
+<img src=https://assets.pokemon.com/assets/cms2/img/pokedex/full/<%= @pokemon.pokedex_num.to_s.rjust 3, "0" %>.png alt="Pokemon" width="100" height="100">

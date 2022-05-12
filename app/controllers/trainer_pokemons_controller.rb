@@ -5,3 +5,6 @@ class TrainerPokemonsController < ApplicationController
     @pokemons = @trainer.pokemons
   end
 end
+
+
+# @trainer.pokemons.each

@@ -3,6 +3,6 @@ class Pokemon < ApplicationRecord
   validates :name, presence: true
   validates :fainted, inclusion: [true, false]
   validates :fainted, exlcusion: nil
-  validates :level, presence: true
+  validates :pokedex_num, presence: true
   validates_associated :trainer
 end
