@@ -10,7 +10,7 @@ RSpec.describe 'the trainers pokemon index page' do
     pokemon = trainer.pokemons.create!(name: "Squirtle", pokedex_num: 7, fainted: false)
     pokemon_2 = trainer.pokemons.create!(name: "Charmander", pokedex_num: 4, fainted: false)
     visit "/trainers/#{trainer.id}/pokemons"
-    save_and_open_page
+    # save_and_open_page
     expect(page).to have_content(pokemon.name)
     expect(page).to have_content(pokemon_2.name)
   end
