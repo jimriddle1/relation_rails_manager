@@ -14,4 +14,12 @@ RSpec.describe 'the trainers index page' do
     expect(page).to have_content(trainer.name)
     expect(page).to have_content(trainer_2.name)
   end
+
+  it 'displays the trainers in order by creation date' do
+    trainer = Trainer.create!(name: "Ash", age: 18, all_8_badges: false)
+    trainer_2 = Trainer.create!(name: "Brock", age: 21, all_8_badges: false)
+    visit "/trainers"
+
+    expect(trainer.name).to appear_before(trainer_2.name)
+  end
 end
