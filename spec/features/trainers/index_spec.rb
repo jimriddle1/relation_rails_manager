@@ -14,14 +14,4 @@ RSpec.describe 'the trainers index page' do
     expect(page).to have_content(trainer.name)
     expect(page).to have_content(trainer_2.name)
   end
-
-  # it 'displays the name of the artist for the song' do
-  #
-  #   pokemon = trainer.pokemons.create!(name: "Squirtle", level: 12, fainted: false)
-  #   binding.pry
-  #   # pokemon_2 = trainers.pokemons.create!(name: "Charmander", level: 6, fainted: false)
-  #   visit "/trainers/#{trainer.id}"
-  #   expect(page).to have_content(pokemon.name)
-  #   expect(page).to_not have_content(pokemon_2.title)
-  # end
 end
