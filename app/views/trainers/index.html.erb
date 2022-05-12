@@ -1,5 +1,5 @@
 <h1>All Trainers</h1>
 
 <% @trainers.each do |trainer| %>
-  <p><%= trainer.name %><p>
+  <h3><a href="/trainers/<%= trainer.id %>"><%= trainer.name %></a></h3>
 <% end %>
