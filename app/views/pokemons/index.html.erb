@@ -1,0 +1,7 @@
+<h1>All Pokemons</h1>
+
+<% @pokemons.each do |pokemon| %>
+  <h3><%= pokemon.name %></h3>
+  <p>Level: <%= pokemon.level %><p>
+  <p>Fainted? <%= pokemon.fainted %><p>
+<% end %>

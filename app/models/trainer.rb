@@ -4,6 +4,5 @@ class Trainer < ApplicationRecord
   validates :all_8_badges, inclusion: [true, false]
   validates :all_8_badges, exlcusion: nil
   validates :age, presence: true
-  validates_associated :pokemons
 
 end

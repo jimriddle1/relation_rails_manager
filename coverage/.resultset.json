@@ -245,12 +245,44 @@
           1,
           1,
           1,
+          1,
           null
         ]
       },
       "/Users/jamesriddle/turing/2module/projects/relation_rails_manager/app/helpers/application_helper.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/Users/jamesriddle/turing/2module/projects/relation_rails_manager/spec/features/trainers/index_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -347,8 +379,27 @@
           1,
           1,
           1,
+          null,
+          null
+        ]
+      },
+      "/Users/jamesriddle/turing/2module/projects/relation_rails_manager/app/controllers/pokemons_controller.rb": {
+        "lines": [
+          1,
+          1,
           1,
           null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/jamesriddle/turing/2module/projects/relation_rails_manager/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
           null
         ]
       },
@@ -406,14 +457,8 @@
           null,
           null
         ]
-      },
-      "/Users/jamesriddle/turing/2module/projects/relation_rails_manager/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
       }
     },
-    "timestamp": 1652307082
+    "timestamp": 1652315260
   }
 }
