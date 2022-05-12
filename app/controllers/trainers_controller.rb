@@ -1,6 +1,8 @@
 class TrainersController < ApplicationController
   def index
-    @trainers = Trainer.all
+    @trainers = Trainer.all.sort_by { |trainer| trainer.created_at}
+    # @trainers.trainers_in_order
+    # binding.pry
   end
 
   def show

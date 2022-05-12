@@ -1,4 +1,7 @@
 <h1><%= @trainer.name %></h1>
+
+<h3><a href="/trainers/<%= @trainer.id %>/pokemons"><%= 'Pokemons' %></a></h3>
 <p>Name: <%= @trainer.name %>
 <p>Age: <%= @trainer.age %>
 <p>All 8 Badges?: <%= @trainer.all_8_badges %>
+<p>Number of Pokemons: <%= @trainer.pokemons.count %>

@@ -1,6 +1,10 @@
 class TrainerPokemonsController < ApplicationController
   def index
+    # binding.pry
     @trainer = Trainer.find(params[:trainer_id])
-    @pokemon = @artist.pokemons
+    @pokemons = @trainer.pokemons
   end
 end
+
+
+# @trainer.pokemons.each
