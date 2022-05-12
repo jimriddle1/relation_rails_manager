@@ -3,8 +3,8 @@ class PokemonsController < ApplicationController
     @pokemons = Pokemon.all
   end
 
-  # def show
-  #   # binding.pry
-  #   @pokemon = Pokemon.find(params[:id])
-  # end
+  def show
+    # binding.pry
+    @pokemon = Pokemon.find(params[:id])
+  end
 end
