@@ -36,4 +36,25 @@ RSpec.describe 'the trainers pokemon index page' do
     visit "/trainers/#{trainer.id}/pokemons"
     expect(page).to have_link('Trainer Index')
   end
+
+  it 'has a link taking me to the pokemons belonging to that trainer' do
+    # As a visitor
+    # When I visit a parent show page ('/parents/:id')
+    # Then I see a link to take me to that parent's `child_table_name` page ('/parents/:id/child_table_name')
+
+    trainer = Trainer.create!(name: "Ash", age: 18, all_8_badges: false)
+    trainer_2 = Trainer.create!(name: "Brock", age: 21, all_8_badges: false)
+
+    pokemon = trainer.pokemons.create!(name: "Squirtle", pokedex_num: 7, fainted: false)
+    pokemon_2 = trainer.pokemons.create!(name: "Charmander", pokedex_num: 4, fainted: false)
+    pokemon_3 = trainer_2.pokemons.create!(name: "Geodude", pokedex_num: 74, fainted: false)
+    visit "/trainers/#{trainer.id}/"
+    click_link 'Pokemons'
+    # save_and_open_page
+
+    expect(page).to have_content(pokemon.name)
+    expect(page).to have_content(pokemon_2.name)
+    expect(page).to have_no_content(pokemon_3.name)
+
+  end
 end
