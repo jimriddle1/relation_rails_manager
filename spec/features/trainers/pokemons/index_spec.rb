@@ -57,4 +57,32 @@ RSpec.describe 'the trainers pokemon index page' do
     expect(page).to have_no_content(pokemon_3.name)
 
   end
+
+  it 'can create a new trainer' do
+    # As a visitor
+    # When I visit the Parent Index page
+    # Then I see a link to create a new Parent record, "New Parent"
+    # When I click this link
+    # Then I am taken to '/parents/new' where I  see a form for a new parent record
+    # When I fill out the form with a new parent's attributes:
+    # And I click the button "Create Parent" to submit the form
+    # Then a `POST` request is sent to the '/parents' route,
+    # a new parent record is created,
+    # and I am redirected to the Parent Index page where I see the new Parent displayed.
+    visit '/trainers'
+
+    click_link('New Trainer')
+    expect(current_path).to eq('/trainers/new')
+
+    # save_and_open_page
+    fill_in('Name', with: 'Misty')
+    fill_in('Age', with: 14)
+    uncheck('all_8_badges')
+    click_button('Create Trainer')
+
+    # save_and_open_page
+    expect(current_path).to eq("/trainers")
+    expect(page).to have_content("Misty")
+
+  end
 end

@@ -9,4 +9,9 @@ class Trainer < ApplicationRecord
     # binding.pry
   end
 
+  def count
+    # binding.pry
+    self.pokemons.count
+  end
+
 end

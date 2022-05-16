@@ -10,6 +10,23 @@ class TrainersController < ApplicationController
     @trainer = Trainer.find(params[:id])
   end
 
+  def new
+  end
+  
+  def create
+    # binding.pry
+    trainer = Trainer.create(trainer_params)
+    redirect_to "/trainers"
+  end
+
+private
+  def trainer_params
+    params.permit(:name, :age, :all_8_badges)
+    # params.permit(:age)
+    # params.permit(:all_8_badges)
+    # params.permit(:name, :hometown, :genre, etc etc)
+end
+
   # def new
   # end
   #
