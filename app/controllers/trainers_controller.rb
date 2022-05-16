@@ -1,6 +1,6 @@
 class TrainersController < ApplicationController
   def index
-    @trainers = Trainer.all.sort_by { |trainer| trainer.created_at}
+    @trainers = Trainer.order(created_at: :desc)
     # @trainers.trainers_in_order
     # binding.pry
   end
@@ -12,11 +12,22 @@ class TrainersController < ApplicationController
 
   def new
   end
-  
+
   def create
     # binding.pry
     trainer = Trainer.create(trainer_params)
     redirect_to "/trainers"
+  end
+
+  def edit
+    @trainer = Trainer.find(params[:id])
+  end
+
+  def update
+    trainer = Trainer.find(params[:id])
+    trainer.update(trainer_params)
+    trainer.save
+    redirect_to "/trainers/#{trainer.id}"
   end
 
 private
@@ -25,7 +36,7 @@ private
     # params.permit(:age)
     # params.permit(:all_8_badges)
     # params.permit(:name, :hometown, :genre, etc etc)
-end
+  end
 
   # def new
   # end
@@ -49,20 +60,6 @@ end
 #     # binding.pry
 #     @task = Task.find(params[:id])
 #   end
-
-  # def edit
-  #   @task = Task.find(params[:id])
-  # end
-
-  # def update
-  #   task = Task.find(params[:id])
-  #   task.update({
-  #     title: params[:task][:title],
-  #     description: params[:task][:description]
-  #     })
-  #   task.save
-  #   redirect_to "/tasks/#{task.id}"
-  # end
 
   # def destroy
   #   Task.destroy(params[:id])

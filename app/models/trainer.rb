@@ -6,7 +6,7 @@ class Trainer < ApplicationRecord
   validates :age, presence: true
 
   def trainers_in_order
-    # binding.pry
+    #use a class method
   end
 
   def count

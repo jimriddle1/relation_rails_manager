@@ -1,0 +1,12 @@
+<%= form_with url: "/trainers/#{@trainer.id}", method: :patch, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <br>
+  <%= form.label :age %>
+  <%= form.number_field :age %>
+  <br>
+  <%= form.label :all_8_badges %>
+  <%= form.check_box :all_8_badges %>
+  <br>
+  <%= form.submit 'Update Trainer' %>
+<% end %>

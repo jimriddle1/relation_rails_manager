@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get '/trainers/:trainer_id/pokemons', to: 'trainer_pokemons#index'
   get '/trainers/new', to: 'trainers#new'
   post '/trainers', to: 'trainers#create'
+  get '/trainers/:id/edit', to: 'trainers#edit'
+  patch '/trainers/:id', to: 'trainers#update'
   get '/trainers/:id', to: 'trainers#show'
   # get '/artists/:artist_id/songs', to: 'artist_songs#index'
   get '/pokemons', to: 'pokemons#index'
