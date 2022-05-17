@@ -2,7 +2,7 @@ class TrainerPokemonsController < ApplicationController
   def index
     if params[:column].nil? == false
       @trainer = Trainer.find(params[:trainer_id])
-      @pokemons = @trainer.pokemons.where("pokedex_num >= #{params[:number]}")
+      @pokemons = @trainer.pokemons.above_pokedex_num_threshold(params[:number])
       # binding.pry
     elsif params[:sorted] == "alphabetical"
       @trainer = Trainer.find(params[:trainer_id])
@@ -11,9 +11,7 @@ class TrainerPokemonsController < ApplicationController
       @trainer = Trainer.find(params[:trainer_id])
       @pokemons = @trainer.pokemons
     end
-
   end
-
 
   def new
     @trainer = Trainer.find(params[:id])
