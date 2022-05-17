@@ -155,4 +155,28 @@ RSpec.describe 'the trainers pokemon index page' do
 
   end
 
+  it 'can delete pokemons from the trainer pokemon index page' do
+    # As a visitor
+    # When I visit the `child_table_name` index page or a parent `child_table_name` index page
+    # Next to every child, I see a link to delete that child
+    # When I click the link
+    # I should be taken to the `child_table_name` index page where I no longer see that child
+    trainer = Trainer.create!(name: "Ash", age: 18, all_8_badges: false)
+    pokemon = trainer.pokemons.create!(name: "Squirtle", pokedex_num: 7, fainted: true)
+    pokemon_2 = trainer.pokemons.create!(name: "Charmander", pokedex_num: 4, fainted: true)
+    pokemon_3 = trainer.pokemons.create!(name: "Bulbasaur", pokedex_num: 1, fainted: true)
+
+    visit "/trainers/#{trainer.id}/pokemons"
+
+    expect(page).to have_link('Delete Squirtle')
+    expect(page).to have_link('Delete Charmander')
+    expect(page).to have_link('Delete Bulbasaur')
+    click_link('Delete Squirtle')
+    expect(current_path).to eq("/pokemons")
+    expect(page).to have_no_content(pokemon.name)
+    expect(page).to have_content(pokemon_2.name)
+    expect(page).to have_content(pokemon_3.name)
+
+  end
+
 end

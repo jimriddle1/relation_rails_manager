@@ -89,7 +89,7 @@ RSpec.describe 'the trainers index page' do
 
   end
 
-  it 'can have buttons to delete each of the trainers' do
+  it 'can have links to delete each of the trainers' do
     # As a visitor
     # When I visit the parent index page
     # Next to every parent, I see a link to delete that parent
@@ -99,7 +99,6 @@ RSpec.describe 'the trainers index page' do
     trainer_2 = Trainer.create!(name: "Brock", age: 21, all_8_badges: false)
     visit "/trainers"
 
-    # save_and_open_page
 
     expect(page).to have_link('Delete Ash')
     expect(page).to have_link('Delete Brock')
