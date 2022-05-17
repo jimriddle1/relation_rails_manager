@@ -77,7 +77,7 @@ RSpec.describe 'the trainers pokemon index page' do
     click_link('New Pokemon')
     # save_and_open_page
     expect(current_path).to eq("/trainers/#{trainer.id}/pokemons/new")
-    
+
     fill_in('Name', with: 'Starmie')
     fill_in('Pokedex num', with: 121)
     uncheck('fainted')
@@ -86,5 +86,27 @@ RSpec.describe 'the trainers pokemon index page' do
     # save_and_open_page
     expect(current_path).to eq("/trainers/#{trainer.id}/pokemons")
     expect(page).to have_content("Starmie")
+  end
+
+  it 'can give me the pokemon in alphabetical order' do
+    # As a visitor
+    # When I visit the Parent's children Index Page
+    # Then I see a link to sort children in alphabetical order
+    # When I click on the link
+    # I'm taken back to the Parent's children Index Page where I see all of the parent's children in alphabetical order
+    trainer = Trainer.create!(name: "Ash", age: 18, all_8_badges: false)
+    pokemon = trainer.pokemons.create!(name: "Squirtle", pokedex_num: 7, fainted: false)
+    pokemon_2 = trainer.pokemons.create!(name: "Charmander", pokedex_num: 4, fainted: false)
+    pokemon_3 = trainer.pokemons.create!(name: "Bulbasaur", pokedex_num: 1, fainted: false)
+
+    visit "/trainers/#{trainer.id}/pokemons"
+
+    expect(pokemon.name).to appear_before(pokemon_2.name)
+
+    click_link('Sort by name')
+
+    expect(pokemon_2.name).to appear_before(pokemon.name)
+    # save_and_open_page
+    # expect(current_path).to eq("/trainers/#{trainer.id}/pokemons?sorted=alphabetical")
   end
 end
