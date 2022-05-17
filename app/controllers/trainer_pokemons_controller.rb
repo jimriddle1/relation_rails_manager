@@ -6,7 +6,7 @@ class TrainerPokemonsController < ApplicationController
       # binding.pry
     elsif params[:sorted] == "alphabetical"
       @trainer = Trainer.find(params[:trainer_id])
-      @pokemons = @trainer.pokemons.order([:name])
+      @pokemons = @trainer.pokemons.alphabetical
     else
       @trainer = Trainer.find(params[:trainer_id])
       @pokemons = @trainer.pokemons
