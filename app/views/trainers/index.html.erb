@@ -5,6 +5,7 @@
   <p>Created at <%= trainer.created_at %><p>
   <p>all_8_badges? <%= trainer.all_8_badges %><p>
   <%= link_to "Update #{trainer.name}", "/trainers/#{trainer.id}/edit" %>
+  <br>
   <%= link_to "Delete #{trainer.name}", "/trainers/#{trainer.id}", method: :delete %>
 <% end %>
 
