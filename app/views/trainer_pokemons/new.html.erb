@@ -1,0 +1,13 @@
+
+<%= form_with url: "/trainers/#{@trainer.id}/pokemons/", method: :post, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <br>
+  <%= form.label :pokedex_num %>
+  <%= form.number_field :pokedex_num %>
+  <br>
+  <%= form.label :fainted %>
+  <%= form.check_box :fainted %>
+  <br>
+  <%= form.submit "Create Pokemon" %>
+<% end %>
