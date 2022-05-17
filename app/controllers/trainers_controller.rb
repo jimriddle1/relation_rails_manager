@@ -1,6 +1,6 @@
 class TrainersController < ApplicationController
   def index
-    @trainers = Trainer.order(created_at: :desc)
+    @trainers = Trainer.trainers_in_order
     # @trainers.trainers_in_order
     # binding.pry
   end
