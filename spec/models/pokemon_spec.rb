@@ -20,4 +20,13 @@ RSpec.describe Pokemon do
     expect(Pokemon.alphabetical).to eq([pokemon_3, pokemon_2, pokemon])
   end
 
+  it 'gives me the pokemon above a certain threshold' do
+    trainer = Trainer.create!(name: "Ash", age: 18, all_8_badges: false)
+    pokemon = trainer.pokemons.create!(name: "Squirtle", pokedex_num: 7, fainted: false)
+    pokemon_2 = trainer.pokemons.create!(name: "Charmander", pokedex_num: 4, fainted: false)
+    pokemon_3 = trainer.pokemons.create!(name: "Bulbasaur", pokedex_num: 1, fainted: false)
+
+    expect(Pokemon.above_threshold(6)).to eq([pokemon])
+  end
+
 end
