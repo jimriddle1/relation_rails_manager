@@ -99,10 +99,12 @@ RSpec.describe 'the trainers index page' do
     trainer_2 = Trainer.create!(name: "Brock", age: 21, all_8_badges: false)
     visit "/trainers"
 
-    expect(page).to have_button('Delete Ash')
-    expect(page).to have_button('Delete Brock')
-    click_button('Delete Ash')
-    expect(current_path).to eq("/trainers/")
+    # save_and_open_page
+
+    expect(page).to have_link('Delete Ash')
+    expect(page).to have_link('Delete Brock')
+    click_link('Delete Ash')
+    expect(current_path).to eq("/trainers")
     expect(page).to have_no_content(trainer.name)
     expect(page).to have_content(trainer_2.name)
 
