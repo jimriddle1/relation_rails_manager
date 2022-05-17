@@ -5,4 +5,10 @@ class Pokemon < ApplicationRecord
   validates :fainted, exlcusion: nil
   validates :pokedex_num, presence: true
   validates_associated :trainer
+
+  def self.alphabetical
+    #use a class method
+    Pokemon.order(:name)
+  end
+
 end
