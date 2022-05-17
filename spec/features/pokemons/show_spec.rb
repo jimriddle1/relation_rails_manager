@@ -63,4 +63,27 @@ RSpec.describe 'the pokemons show page' do
     expect(page).to have_content("Wartortle")
     expect(page).to have_no_content(pokemon.name)
   end
+
+  it 'deletes a pokemon' do
+    # As a visitor
+    # When I visit a child show page
+    # Then I see a link to delete the child "Delete Child"
+    # When I click the link
+    # Then a 'DELETE' request is sent to '/child_table_name/:id',
+    # the child is deleted,
+    # and I am redirected to the child index page where I no longer see this child
+    trainer = Trainer.create!(name: "Ash", age: 18, all_8_badges: false)
+    pokemon = trainer.pokemons.create!(name: "Squirtle", pokedex_num: 7, fainted: true)
+    pokemon_2 = trainer.pokemons.create!(name: "Charmander", pokedex_num: 4, fainted: true)
+
+
+    visit "/pokemons/#{pokemon.id}"
+
+    click_button('Delete Pokemon')
+
+    expect(current_path).to eq('/pokemons')
+
+    expect(page).to have_no_content("Squirtle")
+    expect(page).to have_content("Charmander")
+  end
 end

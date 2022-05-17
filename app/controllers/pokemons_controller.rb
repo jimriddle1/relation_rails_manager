@@ -21,6 +21,11 @@ class PokemonsController < ApplicationController
     redirect_to "/pokemons/#{pokemon.id}"
   end
 
+  def destroy
+    Pokemon.destroy(params[:id])
+    redirect_to '/pokemons'
+  end
+
 private
   def pokemon_params
     params.permit(:name, :pokedex_num, :fainted)

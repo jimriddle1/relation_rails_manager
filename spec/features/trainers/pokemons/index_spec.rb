@@ -126,4 +126,5 @@ RSpec.describe 'the trainers pokemon index page' do
     # save_and_open_page
 
   end
+
 end
