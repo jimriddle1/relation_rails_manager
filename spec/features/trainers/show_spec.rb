@@ -82,5 +82,28 @@ RSpec.describe 'the trainers show page' do
     expect(page).to have_no_content(trainer.name)
   end
 
+  it 'deletes a trainer' do
+    # As a visitor
+    # When I visit a parent show page
+    # Then I see a link to delete the parent
+    # When I click the link "Delete Parent"
+    # Then a 'DELETE' request is sent to '/parents/:id',
+    # the parent is deleted, and all child records are deleted
+    # and I am redirected to the parent index page where I no longer see this parent
+    trainer = Trainer.create!(name: "Ash", age: 18, all_8_badges: false)
+    trainer_2 = Trainer.create!(name: "Brock", age: 21, all_8_badges: false)
+
+    visit "/trainers/#{trainer.id}/"
+
+    click_button('Delete Trainer')
+
+    expect(current_path).to eq('/trainers')
+
+    expect(page).to have_no_content("Ash")
+    expect(page).to have_content("Brock")
+
+
+  end
+
 
 end
