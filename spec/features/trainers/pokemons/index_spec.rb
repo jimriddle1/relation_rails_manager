@@ -141,7 +141,7 @@ RSpec.describe 'the trainers pokemon index page' do
 
     visit "/trainers/#{trainer.id}/pokemons"
 
-    save_and_open_page
+    # save_and_open_page
 
     expect(page).to have_button("Only return records with more than `number` of `column_name`")
     fill_in('Number', with: 2)
