@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-05-16T20:16:53-05:00">2022-05-16T20:16:53-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-05-16T20:23:16-05:00">2022-05-16T20:23:16-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -84,7 +84,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#7005fa8bef807aaf66421d777a1e114a69695c07" class="src_link" title="app/controllers/pokemons_controller.rb">app/controllers/pokemons_controller.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">32</td>
+            <td class="cell--number">33</td>
             <td class="cell--number">15</td>
             <td class="cell--number">15</td>
             <td class="cell--number">0</td>
@@ -497,51 +497,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="3">
-            <span class="hits">4</span>
-            
-
-            
-
-            <code class="ruby">    @pokemons = Pokemon.all</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="4">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="5">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="6">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def show</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="7">
+          <li class="never" data-hits="" data-linenumber="3">
             
             
 
@@ -552,18 +508,18 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="8">
-            <span class="hits">5</span>
+          <li class="covered" data-hits="4" data-linenumber="4">
+            <span class="hits">4</span>
             
 
             
 
-            <code class="ruby">    @pokemon = Pokemon.find(params[:id])</code>
+            <code class="ruby">    @pokemons = Pokemon.where(fainted: true)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="9">
+          <li class="never" data-hits="" data-linenumber="5">
             
             
 
@@ -574,13 +530,57 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="10">
+          <li class="never" data-hits="" data-linenumber="6">
             
             
 
             
 
             <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="7">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def show</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="8">
+            
+            
+
+            
+
+            <code class="ruby">    # binding.pry</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="9">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">    @pokemon = Pokemon.find(params[:id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="10">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -596,13 +596,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="12">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="12">
+            
             
 
             
 
-            <code class="ruby">  def edit</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -613,18 +613,18 @@
 
             
 
-            <code class="ruby">    @pokemon = Pokemon.find(params[:id])</code>
+            <code class="ruby">  def edit</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="14">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="14">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">    @pokemon = Pokemon.find(params[:id])</code>
           </li>
         </div>
       
@@ -635,18 +635,18 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="16">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="16">
+            
             
 
             
 
-            <code class="ruby">  def update</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -657,7 +657,7 @@
 
             
 
-            <code class="ruby">    pokemon = Pokemon.find(params[:id])</code>
+            <code class="ruby">  def update</code>
           </li>
         </div>
       
@@ -668,7 +668,7 @@
 
             
 
-            <code class="ruby">    pokemon.update(pokemon_params)</code>
+            <code class="ruby">    pokemon = Pokemon.find(params[:id])</code>
           </li>
         </div>
       
@@ -679,7 +679,7 @@
 
             
 
-            <code class="ruby">    pokemon.save</code>
+            <code class="ruby">    pokemon.update(pokemon_params)</code>
           </li>
         </div>
       
@@ -690,18 +690,18 @@
 
             
 
-            <code class="ruby">    redirect_to &quot;/pokemons/#{pokemon.id}&quot;</code>
+            <code class="ruby">    pokemon.save</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="21">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="21">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">    redirect_to &quot;/pokemons/#{pokemon.id}&quot;</code>
           </li>
         </div>
       
@@ -712,18 +712,18 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="23">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="23">
+            
             
 
             
 
-            <code class="ruby">private</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -734,7 +734,7 @@
 
             
 
-            <code class="ruby">  def pokemon_params</code>
+            <code class="ruby">private</code>
           </li>
         </div>
       
@@ -745,18 +745,18 @@
 
             
 
-            <code class="ruby">    params.permit(:name, :pokedex_num, :fainted)</code>
+            <code class="ruby">  def pokemon_params</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="26">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="26">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">    # params.permit(:age)</code>
+            
+
+            <code class="ruby">    params.permit(:name, :pokedex_num, :fainted)</code>
           </li>
         </div>
       
@@ -767,7 +767,7 @@
 
             
 
-            <code class="ruby">    # params.permit(:all_8_badges)</code>
+            <code class="ruby">    # params.permit(:age)</code>
           </li>
         </div>
       
@@ -778,7 +778,7 @@
 
             
 
-            <code class="ruby">    # params.permit(:name, :hometown, :genre, etc etc)</code>
+            <code class="ruby">    # params.permit(:all_8_badges)</code>
           </li>
         </div>
       
@@ -789,7 +789,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">    # params.permit(:name, :hometown, :genre, etc etc)</code>
           </li>
         </div>
       
@@ -800,7 +800,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -817,6 +817,17 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="32">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="33">
             
             
 
