@@ -1,12 +1,9 @@
 class TrainersController < ApplicationController
   def index
-    @trainers = Trainer.order(created_at: :desc)
-    # @trainers.trainers_in_order
-    # binding.pry
+    @trainers = Trainer.trainers_in_order
   end
 
   def show
-    # binding.pry
     @trainer = Trainer.find(params[:id])
   end
 
@@ -38,9 +35,6 @@ class TrainersController < ApplicationController
 private
   def trainer_params
     params.permit(:name, :age, :all_8_badges)
-    # params.permit(:age)
-    # params.permit(:all_8_badges)
-    # params.permit(:name, :hometown, :genre, etc etc)
   end
 
 end

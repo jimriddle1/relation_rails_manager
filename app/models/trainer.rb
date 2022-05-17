@@ -5,8 +5,9 @@ class Trainer < ApplicationRecord
   validates :all_8_badges, exlcusion: nil
   validates :age, presence: true
 
-  def trainers_in_order
+  def self.trainers_in_order
     #use a class method
+    Trainer.order(created_at: :desc)
   end
 
   def count
