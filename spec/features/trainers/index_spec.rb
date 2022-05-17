@@ -74,4 +74,19 @@ RSpec.describe 'the trainers index page' do
 
   end
 
+  it 'can have buttons to edit each of the trainers' do
+    trainer = Trainer.create!(name: "Ash", age: 18, all_8_badges: false)
+    trainer_2 = Trainer.create!(name: "Brock", age: 21, all_8_badges: false)
+    visit "/trainers"
+
+    expect(page).to have_link('Update Ash')
+    expect(page).to have_link('Update Brock')
+    click_link('Update Ash')
+    expect(current_path).to eq("/trainers/#{trainer.id}/edit")
+    expect(page).to have_button('Update Trainer')
+
+    # save_and_open_page
+
+  end
+
 end
