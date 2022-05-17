@@ -26,7 +26,7 @@ RSpec.describe Pokemon do
     pokemon_2 = trainer.pokemons.create!(name: "Charmander", pokedex_num: 4, fainted: false)
     pokemon_3 = trainer.pokemons.create!(name: "Bulbasaur", pokedex_num: 1, fainted: false)
 
-    expect(Pokemon.above_threshold(6)).to eq([pokemon])
+    expect(Pokemon.above_pokedex_num_threshold(6)).to eq([pokemon])
   end
 
 end
