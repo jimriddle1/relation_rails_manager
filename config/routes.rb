@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/trainers/:id/edit', to: 'trainers#edit'
   patch '/trainers/:id', to: 'trainers#update'
   get '/trainers/:trainer_id/pokemons', to: 'trainer_pokemons#index'
+  delete '/trainers/:id', to: 'trainers#destroy'
   # get '/artists/:artist_id/songs', to: 'artist_songs#index'
   get '/pokemons', to: 'pokemons#index'
   get '/pokemons/:id', to: 'pokemons#show'

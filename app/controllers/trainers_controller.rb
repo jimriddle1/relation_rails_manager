@@ -30,6 +30,11 @@ class TrainersController < ApplicationController
     redirect_to "/trainers/#{trainer.id}"
   end
 
+  def destroy
+    Trainer.destroy(params[:id])
+    redirect_to '/trainers'
+  end
+
 private
   def trainer_params
     params.permit(:name, :age, :all_8_badges)
@@ -38,30 +43,4 @@ private
     # params.permit(:name, :hometown, :genre, etc etc)
   end
 
-  # def new
-  # end
-  #
-  # def create
-  #   # binding.pry
-  #   task = Task.new({
-  #     title: params[:task][:title],
-  #     description: params[:task][:description]
-  #     })
-  #     # binding.pry
-  #
-  #     task.save
-  #
-  #     # binding.pry
-  #     redirect_to '/tasks'
-  # end
 end
-#
-#   def show
-#     # binding.pry
-#     @task = Task.find(params[:id])
-#   end
-
-  # def destroy
-  #   Task.destroy(params[:id])
-  #   redirect_to '/tasks'
-  # end
