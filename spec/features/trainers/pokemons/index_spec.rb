@@ -141,13 +141,13 @@ RSpec.describe 'the trainers pokemon index page' do
 
     visit "/trainers/#{trainer.id}/pokemons"
 
+    save_and_open_page
 
     expect(page).to have_button("Only return records with more than `number` of `column_name`")
     fill_in('Number', with: 2)
-    fill_in('Column', with: "pokedex_num")
+    select 'pokedex_num', from: 'Column'
     click_button("Only return records with more than `number` of `column_name`")
 
-    # save_and_open_page
 
     expect(page).to have_content(pokemon.name)
     expect(page).to have_content(pokemon_2.name)
