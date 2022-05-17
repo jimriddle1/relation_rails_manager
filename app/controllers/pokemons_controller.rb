@@ -1,6 +1,7 @@
 class PokemonsController < ApplicationController
   def index
-    @pokemons = Pokemon.all
+    # binding.pry
+    @pokemons = Pokemon.where(fainted: true)
   end
 
   def show
