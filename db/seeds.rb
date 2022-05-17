@@ -15,9 +15,9 @@ Trainer.destroy_all
 ash = Trainer.create!(name: 'Ash', age: 10, all_8_badges: false)
 brock = Trainer.create!(name: 'Brock', age: 15, all_8_badges: false)
 
-ash.pokemons.create!(name: 'Pikachu', pokedex_num: 25, fainted: false)
+ash.pokemons.create!(name: 'Pikachu', pokedex_num: 25, fainted: true)
 ash.pokemons.create!(name: 'Squirtle', pokedex_num: 7, fainted: false)
-ash.pokemons.create!(name: 'Charmander', pokedex_num: 4, fainted: false)
+ash.pokemons.create!(name: 'Charmander', pokedex_num: 4, fainted: true)
 
 brock.pokemons.create!(name: 'Geodude', pokedex_num: 74, fainted: false)
-brock.pokemons.create!(name: 'Onix', pokedex_num: 95, fainted: false)
+brock.pokemons.create!(name: 'Onix', pokedex_num: 95, fainted: true)

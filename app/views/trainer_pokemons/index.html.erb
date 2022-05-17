@@ -3,6 +3,8 @@
   <p>Pokedex Num: <%= pokemon.pokedex_num %><p>
   <p>Fainted? <%= pokemon.fainted %><p>
   <img src=https://assets.pokemon.com/assets/cms2/img/pokedex/full/<%= pokemon.pokedex_num.to_s.rjust 3, "0" %>.png alt="Pokemon" width="100" height="100">
+  <br>
+  <%= link_to "Update #{pokemon.name}", "/pokemons/#{pokemon.id}/edit" %>
 <% end %>
 
 <h4><a href="/trainers/<%= @trainer.id %>/pokemons?sorted=alphabetical"><%= 'Sort by name' %></a></h4>

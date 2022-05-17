@@ -9,3 +9,4 @@
 <br>
 
 <h4><a href="/trainers/<%= @trainer.id %>/edit"><%= 'Update Trainer' %></a></h4>
+<%= button_to "Delete Trainer", "/trainers/#{@trainer.id}", method: :delete %>
