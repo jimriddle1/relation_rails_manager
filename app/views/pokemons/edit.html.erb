@@ -1,0 +1,12 @@
+<%= form_with url: "/pokemons/#{@pokemon.id}", method: :patch, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <br>
+  <%= form.label :pokedex_num %>
+  <%= form.number_field :pokedex_num %>
+  <br>
+  <%= form.label :fainted %>
+  <%= form.check_box :fainted %>
+  <br>
+  <%= form.submit 'Update Pokemon' %>
+<% end %>

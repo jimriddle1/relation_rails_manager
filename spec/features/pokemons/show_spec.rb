@@ -50,15 +50,16 @@ RSpec.describe 'the pokemons show page' do
     trainer = Trainer.create!(name: "Ash", age: 18, all_8_badges: false)
     pokemon = trainer.pokemons.create!(name: "Squirtle", pokedex_num: 7, fainted: false)
     visit "/pokemons/#{pokemon.id}"
+    # save_and_open_page
 
     click_link('Update Pokemon')
     expect(current_path).to eq("/pokemons/#{pokemon.id}/edit")
-
+    #
     fill_in('Name', with: 'Wartortle')
-    fill_in('pokedex_num', with: 8)
-    uncheck('fainted')
+    fill_in('Pokedex num', with: 8)
+    uncheck('Fainted')
     click_button('Update Pokemon')
-
+    #
     expect(page).to have_content("Wartortle")
     expect(page).to have_no_content(pokemon.name)
   end
