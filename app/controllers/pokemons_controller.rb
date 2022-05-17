@@ -7,4 +7,6 @@ class PokemonsController < ApplicationController
     # binding.pry
     @pokemon = Pokemon.find(params[:id])
   end
+
+
 end
