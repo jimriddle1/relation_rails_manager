@@ -24,4 +24,4 @@ Things you may want to cover:
 * ...
 
 
-<img width="1425" alt="Screen Shot 2022-02-18 at 11 25 49 AM" src="https://user-images.githubusercontent.com/99755958/154732634-bbb5d6fa-a358-4f1f-94ed-0ce5629d1de3.png">
+![Screen Shot 2022-05-17 at 1 26 04 PM](https://user-images.githubusercontent.com/99755958/168884755-b7de674b-7335-43a7-83b2-71fd53218c1b.png)
