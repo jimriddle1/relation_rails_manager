@@ -35,4 +35,22 @@ RSpec.describe 'the pokemons index page' do
     expect(page).to have_link('Trainer Index')
   end
 
+  it 'only displays pokemon that are not fainted' do
+    # As a visitor
+    # When I visit the child index
+    # Then I only see records where the boolean column is `true`
+    trainer = Trainer.create!(name: "Ash", age: 18, all_8_badges: false)
+    pokemon = trainer.pokemons.create!(name: "Squirtle", pokedex_num: 7, fainted: false)
+    pokemon_2 = trainer.pokemons.create!(name: "Charmander", pokedex_num: 4, fainted: false)
+    pokemon_3 = trainer.pokemons.create!(name: "Bulbasaur", pokedex_num: 1, fainted: true)
+
+    visit "/pokemons"
+
+    expect(page).to have_content(pokemon.name)
+    expect(page).to have_content(pokemon_2.name)
+    expect(page).to have_no_content(pokemon_3.name)
+
+
+  end
+
 end
