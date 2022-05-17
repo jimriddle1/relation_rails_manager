@@ -10,3 +10,13 @@
 <h4><a href="/trainers/<%= @trainer.id %>/pokemons?sorted=alphabetical"><%= 'Sort by name' %></a></h4>
 
 <h4><a href="/trainers/<%= @trainer.id %>/pokemons/new"><%= 'New Pokemon' %></a></h4>
+
+<%= form_with url: "/trainers/#{@trainer.id}/pokemons", method: :get, local: true do |form| %>
+  <%= form.label :column %>
+  <%= form.select :column, ['pokedex_num'] %>
+  <br>
+  <%= form.label :number %>
+  <%= form.number_field :number %>
+  <br>
+  <%= form.submit "Only return records with more than `number` of `column_name`" %>
+<% end %>

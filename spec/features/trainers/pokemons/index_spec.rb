@@ -127,4 +127,32 @@ RSpec.describe 'the trainers pokemon index page' do
 
   end
 
+  it 'can display only pokemons above a certain threshold' do
+    # As a visitor
+    # When I visit the Parent's children Index Page
+    # I see a form that allows me to input a number value
+    # When I input a number value and click the submit button that reads 'Only return records with more than `number` of `column_name`'
+    # Then I am brought back to the current index page with only the records that meet that threshold shown.
+
+    trainer = Trainer.create!(name: "Ash", age: 18, all_8_badges: false)
+    pokemon = trainer.pokemons.create!(name: "Squirtle", pokedex_num: 7, fainted: false)
+    pokemon_2 = trainer.pokemons.create!(name: "Charmander", pokedex_num: 4, fainted: false)
+    pokemon_3 = trainer.pokemons.create!(name: "Bulbasaur", pokedex_num: 1, fainted: false)
+
+    visit "/trainers/#{trainer.id}/pokemons"
+
+    save_and_open_page
+
+    expect(page).to have_button("Only return records with more than `number` of `column_name`")
+    fill_in('Number', with: 2)
+    select 'pokedex_num', from: 'Column'
+    click_button("Only return records with more than `number` of `column_name`")
+
+
+    expect(page).to have_content(pokemon.name)
+    expect(page).to have_content(pokemon_2.name)
+    expect(page).to have_no_content(pokemon_3.name)
+
+  end
+
 end

@@ -1,6 +1,10 @@
 class TrainerPokemonsController < ApplicationController
   def index
-    if params[:sorted] == "alphabetical"
+    if params[:column].nil? == false
+      @trainer = Trainer.find(params[:trainer_id])
+      @pokemons = @trainer.pokemons.where("pokedex_num >= #{params[:number]}")
+      # binding.pry
+    elsif params[:sorted] == "alphabetical"
       @trainer = Trainer.find(params[:trainer_id])
       @pokemons = @trainer.pokemons.order([:name])
     else
@@ -12,7 +16,6 @@ class TrainerPokemonsController < ApplicationController
 
 
   def new
-    # binding.pry
     @trainer = Trainer.find(params[:id])
   end
 
