@@ -77,13 +77,13 @@ RSpec.describe 'the trainers pokemon index page' do
     click_link('New Pokemon')
     # save_and_open_page
     expect(current_path).to eq("/trainers/#{trainer.id}/pokemons/new")
-    #
+    
     fill_in('Name', with: 'Starmie')
     fill_in('Pokedex num', with: 121)
     uncheck('fainted')
     click_button('Create Pokemon')
-    # #
-    save_and_open_page
+
+    # save_and_open_page
     expect(current_path).to eq("/trainers/#{trainer.id}/pokemons")
     expect(page).to have_content("Starmie")
   end

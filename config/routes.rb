@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   # get '/artists/:artist_id/songs', to: 'artist_songs#index'
   get '/pokemons', to: 'pokemons#index'
   get '/pokemons/:id', to: 'pokemons#show'
+  get '/pokemons/:id/edit', to: 'pokemons#edit'
+  patch '/pokemons/:id', to: 'pokemons#update'
 
   get '/trainers/:id/pokemons/new', to: 'trainer_pokemons#new'
   post '/trainers/:id/pokemons', to: 'trainer_pokemons#create'

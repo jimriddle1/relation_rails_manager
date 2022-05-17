@@ -36,4 +36,31 @@ RSpec.describe 'the pokemons show page' do
     visit "/pokemons/#{pokemon.id}"
     expect(page).to have_link('Trainer Index')
   end
+
+  it 'can update the pokemon' do
+    # As a visitor
+    # When I visit a Child Show page
+    # Then I see a link to update that Child "Update Child"
+    # When I click the link
+    # I am taken to '/child_table_name/:id/edit' where I see a form to edit the child's attributes:
+    # When I click the button to submit the form "Update Child"
+    # Then a `PATCH` request is sent to '/child_table_name/:id',
+    # the child's data is updated,
+    # and I am redirected to the Child Show page where I see the Child's updated information
+    trainer = Trainer.create!(name: "Ash", age: 18, all_8_badges: false)
+    pokemon = trainer.pokemons.create!(name: "Squirtle", pokedex_num: 7, fainted: false)
+    visit "/pokemons/#{pokemon.id}"
+    # save_and_open_page
+
+    click_link('Update Pokemon')
+    expect(current_path).to eq("/pokemons/#{pokemon.id}/edit")
+    #
+    fill_in('Name', with: 'Wartortle')
+    fill_in('Pokedex num', with: 8)
+    uncheck('Fainted')
+    click_button('Update Pokemon')
+    #
+    expect(page).to have_content("Wartortle")
+    expect(page).to have_no_content(pokemon.name)
+  end
 end
