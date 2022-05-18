@@ -1,11 +1,9 @@
 class PokemonsController < ApplicationController
   def index
-    # binding.pry
     @pokemons = Pokemon.where(fainted: true)
   end
 
   def show
-    # binding.pry
     @pokemon = Pokemon.find(params[:id])
   end
 
@@ -29,10 +27,6 @@ class PokemonsController < ApplicationController
 private
   def pokemon_params
     params.permit(:name, :pokedex_num, :fainted)
-    # params.permit(:age)
-    # params.permit(:all_8_badges)
-    # params.permit(:name, :hometown, :genre, etc etc)
   end
-
 
 end

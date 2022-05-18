@@ -1,6 +1,11 @@
 class TrainersController < ApplicationController
+
   def index
-    @trainers = Trainer.trainers_in_order
+    if params[:sorted] == "pokemon_count"
+      @trainers = Trainer.trainers_by_pokemon_count
+    else
+      @trainers = Trainer.trainers_in_order
+    end
   end
 
   def show
@@ -11,7 +16,6 @@ class TrainersController < ApplicationController
   end
 
   def create
-    # binding.pry
     trainer = Trainer.create(trainer_params)
     redirect_to "/trainers"
   end
