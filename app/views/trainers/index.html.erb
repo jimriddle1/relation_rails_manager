@@ -4,7 +4,7 @@
   <h3><a href="/trainers/<%= trainer.id %>"><%= trainer.name %></a></h3>
   <p>Created at <%= trainer.created_at %><p>
   <p>all_8_badges? <%= trainer.all_8_badges %><p>
-  <p>count of pokemon: <%= trainer.count %><p>
+  <p>count of pokemon: <%= trainer.pokemon_count %><p>
   <%= link_to "Update #{trainer.name}", "/trainers/#{trainer.id}/edit" %>
   <br>
   <%= link_to "Delete #{trainer.name}", "/trainers/#{trainer.id}", method: :delete %>
@@ -14,3 +14,4 @@
 <br>
 
 <%= link_to "New Trainer", "/trainers/new" %>
+<h4><a href="/trainers?sorted=pokemon_count"><%= 'Sort by Pokemon Count' %></a></h4>

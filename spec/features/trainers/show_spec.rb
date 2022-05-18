@@ -23,9 +23,9 @@ RSpec.describe 'the trainers show page' do
     pokemon_2 = trainer.pokemons.create!(name: "Charmander", pokedex_num: 4, fainted: false)
     visit "/trainers/#{trainer.id}"
 
-    expect(page).to have_content(trainer.pokemons.count)
+    expect(page).to have_content(trainer.pokemon_count)
     #either work
-    # expect(page).to have_content(2)
+    expect(page).to have_content(2)
   end
 
   it 'has the child link on this page' do

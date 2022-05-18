@@ -25,6 +25,26 @@ RSpec.describe Trainer do
       pokemon_2 = trainer.pokemons.create!(name: "Charmander", pokedex_num: 4, fainted: false)
       pokemon_3 = trainer.pokemons.create!(name: "Bulbasaur", pokedex_num: 1, fainted: false)
 
-      expect(trainer.count).to eq(3)
+      expect(trainer.pokemon_count).to eq(3)
+    end
+
+    it 'gives me the trainers in order by pokemon count' do
+      # As a visitor
+      # When I visit the Parents Index Page
+      # Then I see a link to sort parents by the number of `child_table_name` they have
+      # When I click on the link
+      # I'm taken back to the Parent Index Page where I see all of the parents in order of their count of `child_table_name` (highest to lowest) And, I see the number of children next to each parent name
+
+      trainer_2 = Trainer.create!(name: "Misty", age: 10, all_8_badges: false)
+      trainer = Trainer.create!(name: "Ash", age: 11, all_8_badges: false)
+      pokemon = trainer.pokemons.create!(name: "Squirtle", pokedex_num: 7, fainted: false)
+      pokemon_2 = trainer.pokemons.create!(name: "Charmander", pokedex_num: 4, fainted: false)
+      pokemon_3 = trainer_2.pokemons.create!(name: "Bulbasaur", pokedex_num: 1, fainted: false)
+      pokemon_4 = trainer_2.pokemons.create!(name: "Starmie", pokedex_num: 122, fainted: false)
+      pokemon_5 = trainer_2.pokemons.create!(name: "Goldeen", pokedex_num: 120, fainted: false)
+
+      expect(Trainer.trainers_by_pokemon_count).to eq([trainer_2, trainer])
+
+
     end
 end

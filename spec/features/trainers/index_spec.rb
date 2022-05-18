@@ -127,7 +127,7 @@ RSpec.describe 'the trainers index page' do
     pokemon_5 = trainer_2.pokemons.create!(name: "Goldeen", pokedex_num: 120, fainted: false)
 
     visit "/trainers"
-    save_and_open_page
+    # save_and_open_page
 
     expect(trainer.name).to appear_before(trainer_2.name)
     #default is sorted by creation date newest to oldest
