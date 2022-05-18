@@ -10,7 +10,7 @@ RSpec.describe 'the trainers pokemon index page' do
     pokemon = trainer.pokemons.create!(name: "Squirtle", pokedex_num: 7, fainted: false)
     pokemon_2 = trainer.pokemons.create!(name: "Charmander", pokedex_num: 4, fainted: false)
     visit "/trainers/#{trainer.id}/pokemons"
-    # save_and_open_page
+
     expect(page).to have_content(pokemon.name)
     expect(page).to have_content(pokemon_2.name)
   end
@@ -50,7 +50,6 @@ RSpec.describe 'the trainers pokemon index page' do
     pokemon_3 = trainer_2.pokemons.create!(name: "Geodude", pokedex_num: 74, fainted: false)
     visit "/trainers/#{trainer.id}/"
     click_link 'Pokemons'
-    # save_and_open_page
 
     expect(page).to have_content(pokemon.name)
     expect(page).to have_content(pokemon_2.name)
@@ -75,7 +74,6 @@ RSpec.describe 'the trainers pokemon index page' do
     visit "/trainers/#{trainer.id}/pokemons"
 
     click_link('New Pokemon')
-    # save_and_open_page
     expect(current_path).to eq("/trainers/#{trainer.id}/pokemons/new")
 
     fill_in('Name', with: 'Starmie')
@@ -83,7 +81,6 @@ RSpec.describe 'the trainers pokemon index page' do
     uncheck('fainted')
     click_button('Create Pokemon')
 
-    # save_and_open_page
     expect(current_path).to eq("/trainers/#{trainer.id}/pokemons")
     expect(page).to have_content("Starmie")
   end
@@ -100,14 +97,10 @@ RSpec.describe 'the trainers pokemon index page' do
     pokemon_3 = trainer.pokemons.create!(name: "Bulbasaur", pokedex_num: 1, fainted: false)
 
     visit "/trainers/#{trainer.id}/pokemons"
-
     expect(pokemon.name).to appear_before(pokemon_2.name)
 
     click_link('Sort by name')
-
     expect(pokemon_2.name).to appear_before(pokemon.name)
-    # save_and_open_page
-    # expect(current_path).to eq("/trainers/#{trainer.id}/pokemons?sorted=alphabetical")
   end
 
   it 'can have buttons to edit each of the pokemons' do
@@ -122,9 +115,6 @@ RSpec.describe 'the trainers pokemon index page' do
     click_link('Update Charmander')
     expect(current_path).to eq("/pokemons/#{pokemon_2.id}/edit")
     expect(page).to have_button('Update Pokemon')
-
-    # save_and_open_page
-
   end
 
   it 'can display only pokemons above a certain threshold' do
@@ -141,18 +131,14 @@ RSpec.describe 'the trainers pokemon index page' do
 
     visit "/trainers/#{trainer.id}/pokemons"
 
-    # save_and_open_page
-
     expect(page).to have_button("Only return records with more than `number` of `column_name`")
     fill_in('Number', with: 2)
     select 'pokedex_num', from: 'Column'
     click_button("Only return records with more than `number` of `column_name`")
 
-
     expect(page).to have_content(pokemon.name)
     expect(page).to have_content(pokemon_2.name)
     expect(page).to have_no_content(pokemon_3.name)
-
   end
 
   it 'can delete pokemons from the trainer pokemon index page' do
@@ -176,7 +162,6 @@ RSpec.describe 'the trainers pokemon index page' do
     expect(page).to have_no_content(pokemon.name)
     expect(page).to have_content(pokemon_2.name)
     expect(page).to have_content(pokemon_3.name)
-
   end
 
 end

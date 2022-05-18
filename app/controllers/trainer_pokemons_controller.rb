@@ -3,7 +3,6 @@ class TrainerPokemonsController < ApplicationController
     if params[:column].nil? == false
       @trainer = Trainer.find(params[:trainer_id])
       @pokemons = @trainer.pokemons.above_pokedex_num_threshold(params[:number])
-      # binding.pry
     elsif params[:sorted] == "alphabetical"
       @trainer = Trainer.find(params[:trainer_id])
       @pokemons = @trainer.pokemons.alphabetical
@@ -26,12 +25,6 @@ class TrainerPokemonsController < ApplicationController
 private
   def pokemon_params
     params.permit(:name, :pokedex_num, :fainted)
-    # params.permit(:age)
-    # params.permit(:all_8_badges)
-    # params.permit(:name, :hometown, :genre, etc etc)
   end
 
 end
-
-
-# @trainer.pokemons.each
